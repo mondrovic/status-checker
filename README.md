@@ -25,7 +25,7 @@ Replace the following code with proper SMTP connection information. You can choo
 - EMAIL_USER="smtp_username",
 - EMAIL_PASS="smtp_pass"
 
-```
+```js
 async function main() {
   let transporter = nodemailer.createTransport({
     host: process.env.EMAIL_SMTP,
@@ -40,15 +40,15 @@ async function main() {
 
 You can uncomment the following block of code to verify connection to the SMTP server:
 
-```
-  // toggle comment to test server config
-  //   transporter.verify((err, success) => {
-  //     if (err) {
-  //       console.log(err);
-  //     } else {
-  //       console.log("Server is ready");
-  //     }
-  //   });
+```js
+toggle comment to test server config
+    transporter.verify((err, success) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Server is ready");
+    }
+    });
 ```
 
 In addition, uncommenting `console.log("Preview URL: %s", nodemailer.getTestMessageUrl(payload));` will allow you to get diagnostic information if using nodemailer for testing.
