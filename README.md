@@ -21,9 +21,11 @@ status-checker utilizes node-ping and nodemailer to ping a device and send out a
 
 Replace the following code with proper SMTP connection information. You can choose to hide the credentials into a .env file. If using .env, create variables for:
 
-- EMAIL_SMTP="smtp_connection_info",
-- EMAIL_USER="smtp_username",
-- EMAIL_PASS="smtp_pass"
+```
+EMAIL_SMTP="smtp_connection_info",
+EMAIL_USER="smtp_username",
+EMAIL_PASS="smtp_pass"
+```
 
 ```js
 async function main() {
