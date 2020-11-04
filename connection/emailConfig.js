@@ -30,7 +30,7 @@ async function main() {
 
   console.log("Message sent: %s", payload.messageId);
   // only available if using ethereal
-  //   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(payload));
+  // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(payload));
 }
 
 module.exports = main;
