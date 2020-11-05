@@ -3,14 +3,23 @@ const ping = require("ping");
 const hosts = ["10.10.10.112"];
 const main = require("./connection/emailConfig");
 
+// sets a timeout
+const config = {
+  timeout: 10,
+};
+
 // iterates over each instance in hosts array
 hosts.forEach(function (host) {
-  ping.sys.probe(host, function (isAlive) {
-    if (!isAlive) {
-      console.log("Host at %s is unreachable", host);
-      main().catch(console.error);
-    } else {
-      console.log("Host at %s is reachable", host);
-    }
-  });
+  ping.sys.probe(
+    host,
+    function (isAlive) {
+      if (!isAlive) {
+        console.log("Host at %s is unreachable", host);
+        main().catch(console.error);
+      } else {
+        console.log("Host at %s is reachable", host);
+      }
+    },
+    config
+  );
 });
